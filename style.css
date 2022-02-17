@@ -1,0 +1,16 @@
+.grilla {
+    width: 606px;
+    height: 606px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor {
+    display: flex;
+}
+
+.cuadro {
+    height: 200px;
+    width: 200px;
+    border: solid rgb(4, 0, 255) 1px;
+}
