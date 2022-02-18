@@ -14,3 +14,13 @@
     width: 200px;
     border: solid rgb(4, 0, 255) 1px;
 }
+
+.circulo {
+    background-image: url("imagenes/circulo.png");
+    background-size: cover;
+}
+
+.equis {
+    background-image: url("imagenes/equis.jpg");
+    background-size: cover;
+}
