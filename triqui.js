@@ -7,13 +7,22 @@ function resetJuego() {
 
 
 function pintarX(lugar) {
-    posicion[lugar].classList.add('equis');
-    player++;
+
+    if (lugarOcupado(lugar) != true) {
+        posicion[lugar].classList.add('equis');
+        player++;
+    } else {
+        alert('ESTA POSICION ESTA OCUPADA!!');
+    }
 }
 
 function pintarO(lugar) {
-    posicion[lugar].classList.add('circulo');
-    player++;
+    if (lugarOcupado(lugar) != true) {
+        posicion[lugar].classList.add('circulo');
+        player++;
+    } else {
+        alert('ESTA POSICION ESTA OCUPADA!!');
+    }
 }
 
 posicion.forEach(cuadro => {
@@ -25,6 +34,21 @@ posicion.forEach(cuadro => {
             let enY = cuadro.id - 1
             pintarO(enY)
         }
+        triqui();
 
     });
 });
+
+//
+function triqui() {
+    //ToDo
+    console.log('Estas en el triqui');
+}
+
+function lugarOcupado(lugar) {
+
+    if (posicion[lugar].classList.contains('circulo') || posicion[lugar].classList.contains('equis')) {
+        return true;
+    }
+
+}
