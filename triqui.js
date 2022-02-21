@@ -10,16 +10,22 @@ function pintarX(lugar){
     cuadro.classList.add('equis');
     console.log(cuadro);
     player++;
+    console.log(cuadro.classList);
 }
 function pintarO(lugar){
     let cuadro = posicion[lugar];
     cuadro.classList.add('circulo');
     console.log(cuadro);
     player++;
+    console.log(cuadro.classList);
+
 }
+
+
 
 posicion.forEach(cuadro => {
     cuadro.addEventListener('mousedown', () => {
+        console.log('el jugador es'+player);
         if(player%2==0){
         if (cuadro.id == 1) {
             pintarX(0);
