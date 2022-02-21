@@ -15,12 +15,17 @@
     border: solid rgb(4, 0, 255) 1px;
 }
 
-.circulo{
+.circulo {
     background-image: url("imagenes/circulo.png");
     background-size: cover;
 }
 
+<<<<<<< HEAD
 .equis{
     background-image: url("imagenes/equis.png");
+=======
+.equis {
+    background-image: url("imagenes/equis.jpg");
+>>>>>>> Alejandro
     background-size: cover;
 }
