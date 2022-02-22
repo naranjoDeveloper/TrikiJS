@@ -11,14 +11,23 @@ puntosj2.textContent = contadorJ2;
 function ganoJ1() {
     contadorJ1++;
     puntosj1.textContent = contadorJ1;
+    winner(1)
+}
+
+function winner(player) {
+    Swal.fire({
+        text: `Gano el Jugador ${player}`
+    })
+    setTimeout(() => {
+    resetJuego()
+    }, 500);
 }
 
 function ganoJ2() {
     contadorJ2++;
     puntosj2.textContent = contadorJ2;
+    winner(2)
 }
-
-
 
 function resetJuego() {
     let c = document.querySelectorAll('.circulo');
@@ -42,9 +51,9 @@ function resetJuegoTotal() {
         equis.classList.remove('equis');
     })
     player = 0;
-    contadorJ2=0;
-    contadorJ1= 0;
-    puntosj1.textContent=0;
+    contadorJ2 = 0;
+    contadorJ1 = 0;
+    puntosj1.textContent = 0;
     puntosj2.textContent = 0;
 }
 
@@ -53,7 +62,10 @@ function pintarX(lugar) {
         posicion[lugar].classList.add('equis');
         player++;
     } else {
-        alert('ESTA POSICION ESTA OCUPADA!!');
+        Swal.fire({
+            icon: 'error',
+            text: 'Esta posicion esta ocupada'
+        })
     }
 }
 
@@ -62,7 +74,10 @@ function pintarO(lugar) {
         posicion[lugar].classList.add('circulo');
         player++;
     } else {
-        alert('ESTA POSICION ESTA OCUPADA!!');
+        Swal.fire({
+            icon: 'error',
+            text: 'Esta posicion esta ocupada'
+        })
     }
 }
 
@@ -89,6 +104,7 @@ function lugarOcupado(lugar) {
     }
 }
 
+
 function checkT() {
     let c = document.querySelectorAll('.circulo');
     let x = document.querySelectorAll('.equis');
@@ -104,84 +120,52 @@ function checkT() {
     console.log(aC)
     if (aX.includes(1) && aX.includes(2) && aX.includes(3)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(4) && aX.includes(5) && aX.includes(6)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(7) && aX.includes(8) && aX.includes(9)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(1) && aX.includes(4) && aX.includes(7)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(2) && aX.includes(5) && aX.includes(8)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(3) && aX.includes(6) && aX.includes(9)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(1) && aX.includes(5) && aX.includes(9)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     } else if (aX.includes(3) && aX.includes(5) && aX.includes(7)) {
         ganoJ1();
-        setTimeout(() => {
-            alert('gano el jugador 1'), resetJuego()
-        }, 500);
+
     }
     if (aC.includes(1) && aC.includes(2) && aC.includes(3)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(4) && aC.includes(5) && aC.includes(6)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(7) && aC.includes(8) && aC.includes(9)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(1) && aC.includes(4) && aC.includes(7)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(2) && aC.includes(5) && aC.includes(8)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(3) && aC.includes(6) && C.includes(9)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(1) && aC.includes(5) && aC.includes(9)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     } else if (aC.includes(3) && aC.includes(5) && aC.includes(7)) {
         ganoJ2();
-        setTimeout(() => {
-            alert('gano el jugador 2'), resetJuego()
-        }, 500);
+
     }
 }
